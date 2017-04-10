@@ -1,0 +1,19 @@
+functions:
+  jira-worklog-webhook:
+    events:
+      - http:
+          path: /
+          method: post
+    handler: handler.worklogWebhook
+package:
+  exclude:
+    - 'yarn.lock'
+    - '.**'
+plugins:
+  - serverless-plugin-include-dependencies
+provider:
+  name: aws
+  profile: ori
+  runtime: nodejs6.10
+  stage: prod
+service: jira-worklog-webhook

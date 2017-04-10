@@ -4,6 +4,11 @@
   "description": "Timesheet integrator",
   "main": "index.js",
   "private": true,
+  "scripts": {
+    "deploy": "serverless deploy",
+    "logs": "serverless logs -f jira-worklog-webhook",
+    "serverless": "serverless"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:EmergingTechnologyAdvisors/ori.git"
@@ -24,5 +29,8 @@
     "npm": ">= 3.0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "serverless": "^1.10.2",
+    "serverless-plugin-include-dependencies": "^2.0.0"
+  }
 }
