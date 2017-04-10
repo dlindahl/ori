@@ -1,0 +1,28 @@
+{
+  "name": "ori",
+  "version": "1.0.0",
+  "description": "Timesheet integrator",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EmergingTechnologyAdvisors/ori.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Derek Lindahl",
+    "email": "derek@eta.im"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/EmergingTechnologyAdvisors/ori/",
+  "bugs": {
+    "url": "https://github.com/EmergingTechnologyAdvisors/ori/issues"
+  },
+  "contributors": [],
+  "engines": {
+    "node": "6.9.1",
+    "npm": ">= 3.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
