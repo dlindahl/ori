@@ -1,0 +1,59 @@
+{
+  "resource": "/",
+  "path": "/",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "US",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Host": "vcy1un41r9.execute-api.us-east-1.amazonaws.com",
+    "User-Agent": "Atlassian HttpClient unknown / JIRA-1000.885.0 (100040) / Default",
+    "Via": "1.1 localhost (Apache-HttpClient/4.4.1 (cache)), 1.1 b3bccc0e4c2cc0a33e7e8308d88cacdd.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "KXywSD4X8ooBV0dRjuRE1vgeKrRGezIMuoa931fYJY_3G610pzU7ig==",
+    "X-Amzn-Trace-Id": "Root=1-58ebef1e-4e83e1e61a8af0f71919d0fe",
+    "X-Forwarded-For": "104.192.140.39, 54.239.134.126",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": {
+    "issueId": "21600",
+    "projectKey": "ETA",
+    "issueKey": "ETA-156",
+    "user_id": "Derek",
+    "user_key": "derek",
+    "worklogId": "16202",
+    "projectId": "10300"
+  },
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "964306185985",
+    "resourceId": "dew290snjk",
+    "stage": "prod",
+    "requestId": "c1f9777d-1e2e-11e7-988a-5be709eae10c",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "apiKey": null,
+      "sourceIp": "104.192.140.39",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Atlassian HttpClient unknown / JIRA-1000.885.0 (100040) / Default",
+      "user": null
+    },
+    "resourcePath": "/",
+    "httpMethod": "POST",
+    "apiId": "vcy1un41r9"
+  },
+  "body": "{\"timestamp\":1491857182630,\"webhookEvent\":\"worklog_created\",\"worklog\":{\"self\":\"https://etateam.atlassian.net/rest/api/2/issue/21600/worklog/16202\",\"author\":{\"self\":\"https://etateam.atlassian.net/rest/api/2/user?username=Derek\",\"name\":\"Derek\",\"key\":\"derek\",\"accountId\":\"557058:85061aed-36be-4fd0-9660-462eb740bed1\",\"avatarUrls\":{\"48x48\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue\",\"24x24\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue\",\"16x16\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue\",\"32x32\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue\"},\"displayName\":\"Derek Lindahl\",\"active\":true,\"timeZone\":\"America/Los_Angeles\"},\"updateAuthor\":{\"self\":\"https://etateam.atlassian.net/rest/api/2/user?username=Derek\",\"name\":\"Derek\",\"key\":\"derek\",\"accountId\":\"557058:85061aed-36be-4fd0-9660-462eb740bed1\",\"avatarUrls\":{\"48x48\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=48&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D48%26noRedirect%3Dtrue\",\"24x24\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=24&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D24%26noRedirect%3Dtrue\",\"16x16\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=16&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D16%26noRedirect%3Dtrue\",\"32x32\":\"https://avatar-cdn.atlassian.com/30aa58acd1d4e93552c6ec04a2560f1a?s=32&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F30aa58acd1d4e93552c6ec04a2560f1a%3Fd%3Dmm%26s%3D32%26noRedirect%3Dtrue\"},\"displayName\":\"Derek Lindahl\",\"active\":true,\"timeZone\":\"America/Los_Angeles\"},\"comment\":\"test 3\",\"created\":\"2017-04-10T16:46:22.630-0400\",\"updated\":\"2017-04-10T16:46:22.630-0400\",\"started\":\"2017-04-10T16:46:00.000-0400\",\"timeSpent\":\"1m\",\"timeSpentSeconds\":60,\"id\":\"16202\",\"issueId\":\"21600\"}}",
+  "isBase64Encoded": false
+}

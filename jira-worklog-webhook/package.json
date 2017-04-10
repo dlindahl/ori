@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "deploy": "serverless deploy",
+    "invoke": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogAdded.json",
     "logs": "serverless logs -f jira-worklog-webhook",
     "serverless": "serverless"
   },
