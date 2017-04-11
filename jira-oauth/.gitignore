@@ -1,1 +1,4 @@
 node_modules
+*.cer
+*.pem
+*.pcks8

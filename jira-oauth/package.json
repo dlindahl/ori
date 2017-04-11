@@ -4,7 +4,9 @@
   "description": "JIRA OAuth Token Requester",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "generate:keys": "./generate_rsa_keys.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:EmergingTechnologyAdvisors/ori.git"
