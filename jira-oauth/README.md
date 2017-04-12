@@ -10,9 +10,8 @@
 | Stage       | `prod`                                   |
 | Region      | `us-east-1`                              |
 | API Keys    | None                                     |
-| Endpoints   | GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/getToken><br>
-GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/session/create> |
-| Functions   | `jira-oauth: jira-oauth-prod-jira-oauth`<br>`sessionCreate: jira-oauth-prod-sessionCreate` |
+| Endpoints   | GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/callback><br>GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/getToken><br>GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/session/create> |
+| Functions   | `jira-oauth: jira-oauth-prod-jira-oauth`<br>`oauthCallback: jira-oauth-prod-oauthCallback`<br>`sessionCreate: jira-oauth-prod-sessionCreate` |
 
 ## Usage
 
@@ -32,3 +31,5 @@ Once you have generated new keys:
 *   update the [Application Link](https://etateam.atlassian.net/plugins/servlet/applinks/listApplicationLinks) in JIRA, specifically the Public Key entry
 *   Re-deploy the `jira-oauth` lambda functions via `yarn deploy`
 *   Initiate the OAuth Dance by accessing this lambda function's `oauth/getToken` endpoint
+*   Authenticate with JIRA
+*   Make note of the generated access tokens

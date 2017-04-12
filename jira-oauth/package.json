@@ -7,9 +7,11 @@
   "scripts": {
     "deploy": "serverless deploy",
     "generate:keys": "./generate_rsa_keys.sh",
+    "invoke:oauthCallback": "serverless invoke local --function oauthCallback --path fixtures/oauthCallback.json",
     "invoke:requestOauthToken": "serverless invoke local --function requestOauthToken --path fixtures/requestOauthToken.json",
     "invoke:sessionCreate": "serverless invoke local --function sessionCreate --path fixtures/sessionCreate.json",
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
+    "logs:oauthCallback": "serverless logs -f oauthCallback",
     "logs:requestOauthToken": "serverless logs -f requestOauthToken",
     "logs:sessionCreate": "serverless logs -f sessionCreate",
     "serverless": "serverless"

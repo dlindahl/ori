@@ -1,3 +1,4 @@
+const oauthCallback = require('./oauthCallback');
 const requestOauthToken = require('./requestOauthToken');
 const sessionCreate = require('./sessionCreate');
 
@@ -20,6 +21,10 @@ function ok(callback) {
 // Initiates the OAuth dance by requesting a token from JIRA
 module.exports.requestOauthToken = (event, context, callback) => {
   return requestOauthToken(event).then(ok(callback)).catch(fail(callback));
+};
+
+module.exports.oauthCallback = (event, context, callback) => {
+  return oauthCallback(event).then(ok(callback)).catch(fail(callback));
 };
 
 module.exports.sessionCreate = (event, context, callback) => {

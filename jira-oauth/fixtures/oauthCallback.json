@@ -1,0 +1,60 @@
+{
+  "resource": "/oauth/callback",
+  "path": "/oauth/callback",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate, sdch, br",
+    "Accept-Language": "en-US,en;q=0.8",
+    "cache-control": "max-age=0",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "US",
+    "Cookie": "oauth=%7B%22oauthToken%22%3A%22Wrx4aEiHWaALjsNZauIt5xXWGE5ehKYi%22%2C%22oauthTokenSecret%22%3A%22u0DWIHk9HhQP9zDb8DguFkopk7shvd3k%22%7D",
+    "dnt": "1",
+    "Host": "3o22ge65p9.execute-api.us-east-1.amazonaws.com",
+    "Referer": "https://etateam.atlassian.net/plugins/servlet/oauth/authorize?oauth_token=Wrx4aEiHWaALjsNZauIt5xXWGE5ehKYi",
+    "upgrade-insecure-requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+    "Via": "2.0 aa850772e2b90ee3a4b9eabaa98dbc07.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "IZI4PKifFfybZfTkEM4-ZlqL4775mKSxnQJe24QFGDfnS0E1N-OIjw==",
+    "X-Amzn-Trace-Id": "Root=1-58ee7034-365e5b2820333f5d5501a06c",
+    "X-Forwarded-For": "76.105.62.135, 216.137.44.152",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": {
+    "oauth_token": "Wrx4aEiHWaALjsNZauIt5xXWGE5ehKYi",
+    "oauth_verifier": "7kUQJZ"
+  },
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "964306185985",
+    "resourceId": "vb17xh",
+    "stage": "prod",
+    "requestId": "dfd84d10-1fac-11e7-b6e1-81bc80d80d30",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "apiKey": null,
+      "sourceIp": "76.105.62.135",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+      "user": null
+    },
+    "resourcePath": "/oauth/callback",
+    "httpMethod": "GET",
+    "apiId": "3o22ge65p9"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

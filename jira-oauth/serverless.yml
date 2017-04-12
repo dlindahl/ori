@@ -1,4 +1,10 @@
 functions:
+  oauthCallback:
+    events:
+      - http:
+          method: get
+          path: /oauth/callback
+    handler: handler.oauthCallback
   requestOauthToken:
     events:
       - http:
