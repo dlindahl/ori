@@ -36,9 +36,11 @@
     "npm": ">= 3.0"
   },
   "dependencies": {
+    "convict": "^3.0.0",
     "cookie": "^0.3.1",
     "dotenv": "^4.0.0",
-    "oauth": "^0.9.15"
+    "oauth": "^0.9.15",
+    "url-template": "^2.0.8"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

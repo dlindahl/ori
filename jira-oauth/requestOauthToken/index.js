@@ -1,9 +1,9 @@
-const dotenv = require('dotenv');
-dotenv.load();
+const env = require('../config/environment');
 
 const getEndpoint = require('../util/getEndpoint');
 const oauthConsumer = require('../util/jiraOauthConsumer');
 const oauthTokenCookie = require('./oauthTokenCookie');
+const template = require('url-template');
 
 // Initiates the OAuth dance with JIRA
 module.exports = function requestToken(event) {
@@ -25,8 +25,11 @@ module.exports = function requestToken(event) {
     if (!tokens) {
       throw new Error('No tokens returned');
     }
-    const redirect = process.env.JIRA_HOST_NAME +
-      `/plugins/servlet/oauth/authorize?oauth_token=${tokens.oauthToken}`;
+    const redirectTmpl = template.parse(env.get('authorizeUrl'));
+    const redirect = env.get('oauthHostName') +
+      redirectTmpl.expand({
+        oauth_token: tokens.oauthToken
+      });
     return {
       statusCode: 302,
       headers: {

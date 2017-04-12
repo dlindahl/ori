@@ -1,6 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.load();
-
 const cookie = require('cookie');
 const getEndpoint = require('../util/getEndpoint');
 const oauthConsumer = require('../util/jiraOauthConsumer');
