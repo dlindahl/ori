@@ -1,0 +1,21 @@
+functions:
+  requestOauthToken:
+    events:
+      - http:
+          method: get
+          path: /oauth/getToken
+    handler: handler.requestOauthToken
+package:
+  exclude:
+    - 'yarn.lock'
+    - '.**'
+    - 'jira_*key.*'
+    - '!jira_privatekey.pcks8'
+plugins:
+  - serverless-plugin-include-dependencies
+provider:
+  name: aws
+  profile: ori
+  runtime: nodejs6.10
+  stage: prod
+service: jira-oauth

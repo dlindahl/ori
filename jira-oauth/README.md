@@ -2,6 +2,17 @@
 
 > Command-line utility to request an OAuth token from JIRA
 
+## Service Information
+
+|             |                                          |
+| ----------- | ---------------------------------------- |
+| Service     | `jira-oauth`                             |
+| Stage       | `prod`                                   |
+| Region      | `us-east-1`                              |
+| API Keys    | None                                     |
+| Endpoints   | GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/getToken> |
+| Functions   | `jira-oauth: jira-oauth-prod-jira-oauth` |
+
 ## Usage
 
 ### RSA Key Pairs
@@ -14,4 +25,9 @@ If, for some reason, you need to regenerate these key pairs, run the following c
 yarn generate:keys
 ```
 
-Once you have generated new keys, *update* the Ori data in the 1Password ETA Vault and update the [Application Link](https://etateam.atlassian.net/plugins/servlet/applinks/listApplicationLinks) in JIRA.
+Once you have generated new keys:
+
+*   *update* the Ori data in the 1Password ETA Vault
+*   update the [Application Link](https://etateam.atlassian.net/plugins/servlet/applinks/listApplicationLinks) in JIRA, specifically the Public Key entry
+*   Re-deploy the `jira-oauth` lambda functions via `yarn deploy`
+*   Initiate the OAuth Dance by accessing this lambda function's `oauth/getToken` endpoint

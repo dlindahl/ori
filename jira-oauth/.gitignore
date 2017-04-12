@@ -1,4 +1,14 @@
+# package directories
 node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Certificates
 *.cer
 *.pem
 *.pcks8
+
+# Dotenv
+.env

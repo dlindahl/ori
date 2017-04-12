@@ -5,8 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "deploy": "serverless deploy",
     "generate:keys": "./generate_rsa_keys.sh",
-    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
+    "invoke:requestOauthToken": "serverless invoke local --function requestOauthToken --path fixtures/requestOauthToken.json",
+    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
+    "logs:requestOauthToken": "serverless logs -f requestOauthToken",
+    "serverless": "serverless"
   },
   "repository": {
     "type": "git",
@@ -27,10 +31,15 @@
     "node": "6.9.1",
     "npm": ">= 3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "oauth": "^0.9.15"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-eta": "^0.0.9",
-    "prettier-eslint-cli": "^3.2.0"
+    "prettier-eslint-cli": "^3.2.0",
+    "serverless": "^1.10.2",
+    "serverless-plugin-include-dependencies": "^2.0.0"
   }
 }
