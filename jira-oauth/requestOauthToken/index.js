@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.load();
 
-const getEndpoint = require('./getEndpoint');
-const oauthConsumer = require('./jiraOauthConsumer');
+const getEndpoint = require('../util/getEndpoint');
+const oauthConsumer = require('../util/jiraOauthConsumer');
 const oauthTokenCookie = require('./oauthTokenCookie');
 
 // Initiates the OAuth dance with JIRA
