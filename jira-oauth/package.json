@@ -8,8 +8,10 @@
     "deploy": "serverless deploy",
     "generate:keys": "./generate_rsa_keys.sh",
     "invoke:requestOauthToken": "serverless invoke local --function requestOauthToken --path fixtures/requestOauthToken.json",
+    "invoke:sessionCreate": "serverless invoke local --function sessionCreate --path fixtures/sessionCreate.json",
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
     "logs:requestOauthToken": "serverless logs -f requestOauthToken",
+    "logs:sessionCreate": "serverless logs -f sessionCreate",
     "serverless": "serverless"
   },
   "repository": {
@@ -32,6 +34,7 @@
     "npm": ">= 3.0"
   },
   "dependencies": {
+    "cookie": "^0.3.1",
     "dotenv": "^4.0.0",
     "oauth": "^0.9.15"
   },

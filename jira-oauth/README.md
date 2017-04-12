@@ -10,8 +10,9 @@
 | Stage       | `prod`                                   |
 | Region      | `us-east-1`                              |
 | API Keys    | None                                     |
-| Endpoints   | GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/getToken> |
-| Functions   | `jira-oauth: jira-oauth-prod-jira-oauth` |
+| Endpoints   | GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/getToken><br>
+GET - <https://3o22ge65p9.execute-api.us-east-1.amazonaws.com/prod/oauth/session/create> |
+| Functions   | `jira-oauth: jira-oauth-prod-jira-oauth`<br>`sessionCreate: jira-oauth-prod-sessionCreate` |
 
 ## Usage
 

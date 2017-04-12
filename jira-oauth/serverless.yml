@@ -5,6 +5,12 @@ functions:
           method: get
           path: /oauth/getToken
     handler: handler.requestOauthToken
+  sessionCreate:
+    events:
+      - http:
+          method: get
+          path: /oauth/sessions/create
+    handler: handler.sessionCreate
 package:
   exclude:
     - 'yarn.lock'

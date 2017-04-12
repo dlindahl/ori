@@ -1,4 +1,5 @@
 const requestOauthToken = require('./requestOauthToken');
+const sessionCreate = require('./sessionCreate');
 
 function fail(callback) {
   return error => {
@@ -20,4 +21,7 @@ function ok(callback) {
 module.exports.requestOauthToken = (event, context, callback) => {
   return requestOauthToken(event).then(ok(callback)).catch(fail(callback));
 };
+
+module.exports.sessionCreate = (event, context, callback) => {
+  return sessionCreate(event).then(ok(callback)).catch(fail(callback));
 };

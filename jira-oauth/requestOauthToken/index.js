@@ -25,12 +25,13 @@ module.exports = function requestToken(event) {
     if (!tokens) {
       throw new Error('No tokens returned');
     }
+    const redirect = process.env.JIRA_HOST_NAME +
+      `/plugins/servlet/oauth/authorize?oauth_token=${tokens.oauthToken}`;
     return {
       statusCode: 302,
       headers: {
-        Cookie: oauthTokenCookie(event, tokens),
-        Location: process.env.JIRA_HOST_NAME +
-          `/plugins/servlet/oauth/authorize?oauth_token=${tokens.oauthToken}`
+        'Set-Cookie': oauthTokenCookie(event, tokens),
+        Location: `${currentEndpoint}/oauth/sessions/create?redirect=${redirect}`
       }
     };
   });

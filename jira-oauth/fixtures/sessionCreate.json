@@ -1,0 +1,57 @@
+{
+  "resource": "/oauth/sessions/create",
+  "path": "/oauth/sessions/create",
+  "httpMethod": "GET",
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Encoding": "gzip, deflate, sdch, br",
+    "Accept-Language": "en-US,en;q=0.8",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "US",
+    "Cookie": "oauth=%7B%22oauthToken%22%3A%22taCNnNRzP4NmLGuOX8HRIGslfSb2ui3d%22%2C%22oauthTokenSecret%22%3A%22LKAT0p8t9rSUxLjcdXPviXcsojemYcMm%22%7D",
+    "dnt": "1",
+    "Host": "3o22ge65p9.execute-api.us-east-1.amazonaws.com",
+    "upgrade-insecure-requests": "1",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+    "Via": "2.0 e581a06b92b9d95c5590959c169aecd8.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "ro0w6oYqIb9hLwBiIp4H8lcNSa6NRmC_8Iy3ZaCMwK2zF9WqJ5eLZw==",
+    "X-Amzn-Trace-Id": "Root=1-58ee6c7c-03e67521105919d2763a3ea1",
+    "X-Forwarded-For": "76.105.62.135, 216.137.44.163",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "queryStringParameters": {
+    "redirect": "https://etateam.atlassian.net/plugins/servlet/oauth/authorize?oauth_token=taCNnNRzP4NmLGuOX8HRIGslfSb2ui3d"
+  },
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "accountId": "964306185985",
+    "resourceId": "303b54",
+    "stage": "prod",
+    "requestId": "a81f1494-1faa-11e7-9262-ef1d6660b44b",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "apiKey": null,
+      "sourceIp": "76.105.62.135",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36",
+      "user": null
+    },
+    "resourcePath": "/oauth/sessions/create",
+    "httpMethod": "GET",
+    "apiId": "3o22ge65p9"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}
