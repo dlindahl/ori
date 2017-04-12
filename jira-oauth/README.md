@@ -33,3 +33,11 @@ Once you have generated new keys:
 *   Initiate the OAuth Dance by accessing this lambda function's `oauth/getToken` endpoint
 *   Authenticate with JIRA
 *   Make note of the generated access tokens
+
+## References
+
+*   <https://docs.atlassian.com/jira/REST/cloud/>
+*   <https://developer.atlassian.com/cloud/jira/platform/jira-rest-api-oauth-authentication/?_ga=1.122747211.1395250536.1483510620>
+*   <https://bitbucket.org/atlassian_tutorial/atlassian-oauth-examples/src/0c6b54f6fefe996535fb0bdb87ad937e5ffc402d/nodejs/?at=default>
+*   <https://developer.atlassian.com/jiradev/jira-apis/jira-rest-apis/jira-rest-api-tutorials/jira-rest-api-example-oauth-authentication>
+*   <https://devup.co/jira-rest-api-oauth-authentication-in-node-js-2f8d226a493a>
