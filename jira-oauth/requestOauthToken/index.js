@@ -1,4 +1,4 @@
-const env = require('../config/environment');
+const env = require('ori-tools').env;
 
 const getEndpoint = require('../util/getEndpoint');
 const oauthConsumer = require('../util/jiraOauthConsumer');

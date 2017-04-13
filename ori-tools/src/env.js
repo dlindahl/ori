@@ -1,7 +1,14 @@
 const convict = require('convict');
 const dotenv = require('dotenv');
+const findOriRoot = require('./findOriRoot');
+const isLambda = require('./isLambda');
+const path = require('path');
 
-dotenv.load();
+// Dotenv doesn't work on AWS Lambda so don't even attempt to parse a .env
+if (!isLambda) {
+  const oriRootPath = findOriRoot.sync(__dirname);
+  dotenv.load(path.join(oriRootPath, '.env'));
+}
 
 const config = convict({
   accessUrl: {

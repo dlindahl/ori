@@ -31,6 +31,8 @@
     "npm": ">= 3.0"
   },
   "dependencies": {
+    "convict": "^3.0.0",
+    "dotenv": "^4.0.0",
     "pkg-dir": "^1.0.0"
   },
   "devDependencies": {

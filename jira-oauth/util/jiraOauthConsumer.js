@@ -1,4 +1,4 @@
-const env = require('../config/environment');
+const env = require('ori-tools').env;
 
 const fs = require('fs');
 const OAuth = require('oauth').OAuth;
