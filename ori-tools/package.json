@@ -4,6 +4,10 @@
   "description": "Various tools used in supporting Ori",
   "main": "index.js",
   "private": true,
+  "files": [
+    "README.md",
+    "src"
+  ],
   "scripts": {
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
   },
@@ -26,7 +30,9 @@
     "node": "6.9.1",
     "npm": ">= 3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "pkg-dir": "^1.0.0"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-eta": "^0.0.9",

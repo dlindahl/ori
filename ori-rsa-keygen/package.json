@@ -37,6 +37,7 @@
   "dependencies": {
     "boxen": "^1.0.0",
     "chalk": "^1.1.3",
+    "ori-tools": "file:../ori-tools",
     "pkg-dir": "^1.0.0"
   },
   "devDependencies": {

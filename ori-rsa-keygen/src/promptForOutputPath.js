@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const findOriRoot = require('./findOriRoot');
+const findOriRoot = require('ori-tools').findOriRoot;
 const readline = require('readline');
 
 /*
