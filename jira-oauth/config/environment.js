@@ -31,7 +31,7 @@ const config = convict({
   privateKeyPath: {
     doc: 'The path, relative to the root of this application, to the Private Key file (.pcks8 or .pem)',
     format: String,
-    default: './jira_privatekey.pcks8',
+    default: '../jira_privatekey.pcks8',
     env: 'PRIVATE_KEY_PATH'
   },
   requestUrl: {

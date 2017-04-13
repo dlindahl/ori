@@ -3,6 +3,14 @@
   "version": "1.0.1",
   "description": "Various tools used in dealing with OAuth workflows",
   "main": "index.js",
+  "bin": {
+    "rsa-keygen": "bin/rsaKeygen.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "src"
+  ],
   "private": true,
   "scripts": {
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
@@ -26,7 +34,11 @@
     "node": "6.9.1",
     "npm": ">= 3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "boxen": "^1.0.0",
+    "chalk": "^1.1.3",
+    "pkg-dir": "^1.0.0"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-eta": "^0.0.9",
