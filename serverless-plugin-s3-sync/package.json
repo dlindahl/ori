@@ -4,7 +4,9 @@
   "description": "Serverless Plugin to sync with S3",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:EmergingTechnologyAdvisors/ori.git"
@@ -24,5 +26,9 @@
     "node": "6.9.1"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-eta": "^0.0.9",
+    "prettier-eslint-cli": "^3.2.0"
+  }
 }
