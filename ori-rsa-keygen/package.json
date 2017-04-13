@@ -4,7 +4,9 @@
   "description": "Various tools used in dealing with OAuth workflows",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:EmergingTechnologyAdvisors/ori.git"
@@ -25,5 +27,9 @@
     "npm": ">= 3.0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-eta": "^0.0.9",
+    "prettier-eslint-cli": "^3.2.0"
+  }
 }
