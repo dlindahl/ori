@@ -1,6 +1,6 @@
 const cookie = require('cookie');
-const getEndpoint = require('../util/getEndpoint');
 const oauthConsumer = require('../util/jiraOauthConsumer');
+const getEndpoint = require('ori-tools').getEndpoint;
 
 function getTokens(event) {
   const cookies = cookie.parse(event.headers.Cookie);
