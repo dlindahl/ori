@@ -1,7 +1,7 @@
 const env = require('ori-tools').env;
 
 const getEndpoint = require('ori-tools').getEndpoint;
-const jiraOauthConsumer = require('ori-tools').jiraOauthConsumer;
+const jira = require('ori-tools').jira;
 const oauthTokenCookie = require('./oauthTokenCookie');
 const template = require('url-template');
 

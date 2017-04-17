@@ -7,6 +7,7 @@
   "scripts": {
     "deploy": "serverless deploy",
     "invoke": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogAdded.json",
+    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
     "logs": "serverless logs -f jira-worklog-webhook",
     "serverless": "serverless"
   },
@@ -29,8 +30,13 @@
     "node": "6.9.1",
     "npm": ">= 3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ori-tools": "file:../ori-tools"
+  },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-eta": "^0.0.9",
+    "prettier-eslint-cli": "^3.2.0",
     "serverless": "^1.10.2",
     "serverless-plugin-include-dependencies": "^2.0.0"
   }
