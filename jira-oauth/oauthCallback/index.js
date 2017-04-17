@@ -1,6 +1,6 @@
 const cookie = require('cookie');
-const oauthConsumer = require('../util/jiraOauthConsumer');
 const getEndpoint = require('ori-tools').getEndpoint;
+const jiraOauthConsumer = require('ori-tools').jiraOauthConsumer;
 
 function getTokens(event) {
   const cookies = cookie.parse(event.headers.Cookie);
@@ -22,7 +22,7 @@ function getTokens(event) {
 module.exports = function oauthCallback(event) {
   const tokens = getTokens(event);
   const currentEndpoint = getEndpoint(event);
-  const oa = oauthConsumer(currentEndpoint);
+  const oa = jiraOauthConsumer(currentEndpoint);
   return new Promise((resolve, reject) => {
     oa.getOAuthAccessToken(
       event.queryStringParameters.oauth_token,

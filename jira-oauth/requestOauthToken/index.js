@@ -1,14 +1,14 @@
 const env = require('ori-tools').env;
 
-const oauthConsumer = require('../util/jiraOauthConsumer');
 const getEndpoint = require('ori-tools').getEndpoint;
+const jiraOauthConsumer = require('ori-tools').jiraOauthConsumer;
 const oauthTokenCookie = require('./oauthTokenCookie');
 const template = require('url-template');
 
 // Initiates the OAuth dance with JIRA
 module.exports = function requestToken(event) {
   const currentEndpoint = getEndpoint(event);
-  const oa = oauthConsumer(currentEndpoint);
+  const oa = jiraOauthConsumer(currentEndpoint);
 
   return new Promise((resolve, reject) => {
     oa.getOAuthRequestToken(function(error, oauthToken, oauthTokenSecret) {
@@ -19,7 +19,7 @@ module.exports = function requestToken(event) {
         );
         return reject(err);
       }
-      resolve({oauthToken, oauthTokenSecret});
+      resolve({ oauthToken, oauthTokenSecret });
     });
   }).then(tokens => {
     if (!tokens) {
