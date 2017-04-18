@@ -1,0 +1,1 @@
+../../src/ServerlessS3SyncPlugin.js

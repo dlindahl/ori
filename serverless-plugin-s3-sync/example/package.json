@@ -1,0 +1,12 @@
+{
+  "name": "serverless-splugin-s3-sync",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "../node_modules/serverless/bin/serverless deploy",
+    "serverless": "../node_modules/serverless/bin/serverless"
+  },
+  "dependencies": {}
+}
