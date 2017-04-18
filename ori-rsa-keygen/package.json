@@ -1,7 +1,7 @@
 {
-  "name": "oauth-tools",
+  "name": "ori-rsa-keygen",
   "version": "1.0.1",
-  "description": "Various tools used in dealing with OAuth workflows",
+  "description": "RSA key generation utilities for JIRA integration",
   "main": "index.js",
   "bin": {
     "rsa-keygen": "bin/rsaKeygen.js"
@@ -13,7 +13,10 @@
   ],
   "private": true,
   "scripts": {
-    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix ."
+    "deploy": "serverless deploy",
+    "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
+    "rsa-keygen": "./bin/rsaKeygen.js",
+    "serverless": "serverless"
   },
   "repository": {
     "type": "git",
@@ -43,6 +46,8 @@
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-eta": "^0.0.9",
-    "prettier-eslint-cli": "^3.2.0"
+    "prettier-eslint-cli": "^3.2.0",
+    "serverless": "^1.11.0",
+    "serverless-plugin-s3-sync": "file:../serverless-plugin-s3-sync"
   }
 }

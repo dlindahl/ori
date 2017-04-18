@@ -1,0 +1,20 @@
+custom:
+  s3:
+    bucket: ${self:service}
+    include:
+      - keys/**
+plugins:
+  - serverless-plugin-s3-sync
+provider:
+  name: aws
+  profile: ori
+  runtime: nodejs6.10
+  stage: prod
+resources:
+  Resources:
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.s3.bucket}
+        AccessControl: AwsExecRead
+service: ori-rsa-keygen
