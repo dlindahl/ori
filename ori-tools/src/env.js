@@ -1,13 +1,11 @@
 const convict = require('convict');
 const dotenv = require('dotenv');
-const findOriRoot = require('./findOriRoot');
 const isLambda = require('./isLambda');
 const path = require('path');
 
 // Dotenv doesn't work on AWS Lambda so don't even attempt to parse a .env
 if (!isLambda) {
-  const oriRootPath = findOriRoot.sync(__dirname);
-  dotenv.load(path.join(oriRootPath, '.env'));
+  dotenv.load(path.join(process.cwd(), '.env'));
 }
 
 const config = convict({
@@ -35,11 +33,17 @@ const config = convict({
     default: 'https://etateam.atlassian.net',
     env: 'OAUTH_HOST_NAME'
   },
-  privateKeyPath: {
-    doc: 'The path, relative to the root of this application, to the Private Key file (.pcks8 or .pem)',
+  oauthKeysS3Bucket: {
+    doc: 'The name of the S3 bucket that contains import Ori RSA Keys',
     format: String,
-    default: '../jira_privatekey.pcks8',
-    env: 'PRIVATE_KEY_PATH'
+    default: 'ori-rsa-keygen',
+    env: 'OAUTH_KEYS_S3_BUCKET'
+  },
+  jiraOauthConsumerSecretPath: {
+    doc: 'The name of the file that contains the Consumer Secret for JIRA OAuth requests',
+    format: String,
+    default: 'keys/jira_privatekey.pcks8',
+    env: 'JIRA_OAUTH_CONSUMER_SECRET_PATH'
   },
   requestUrl: {
     doc: 'The URL used to generate an OAuth request token',

@@ -33,9 +33,10 @@
   "dependencies": {
     "convict": "^3.0.0",
     "dotenv": "^4.0.0",
-    "pkg-dir": "^1.0.0"
+    "oauth": "^0.9.15"
   },
   "devDependencies": {
+    "aws-sdk": "^2.41.0",
     "eslint": "^3.19.0",
     "eslint-config-eta": "^0.0.9",
     "prettier-eslint-cli": "^3.2.0"

@@ -1,6 +1,6 @@
 const chalk = require('chalk');
-const findOriRoot = require('ori-tools').findOriRoot;
 const readline = require('readline');
+const path = require('path');
 
 /*
  * If the root folder could not be found, alert the user
@@ -47,5 +47,7 @@ of the Ori project.
 }
 
 module.exports = function promptForOutputPath() {
-  return findOriRoot(__dirname).then(promptUser).catch(handleNotFoundError);
+  return promptUser(path.join(process.cwd(), 'keys')).catch(
+    handleNotFoundError
+  );
 };
