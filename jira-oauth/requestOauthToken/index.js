@@ -29,7 +29,7 @@ module.exports = function requestToken(event) {
         throw new Error('No tokens returned');
       }
       const redirectTmpl = template.parse(env.get('authorizeUrl'));
-      const redirect = env.get('oauthHostName') +
+      const redirect = env.get('jiraOauthHostName') +
         redirectTmpl.expand({
           oauth_token: tokens.oauthToken
         });

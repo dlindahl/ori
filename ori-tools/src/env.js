@@ -1,12 +1,9 @@
 const convict = require('convict');
 const dotenv = require('dotenv');
-const isLambda = require('./isLambda');
 const path = require('path');
 
-// Dotenv doesn't work on AWS Lambda so don't even attempt to parse a .env
-if (!isLambda) {
-  dotenv.load(path.join(process.cwd(), '.env'));
-}
+// This is a no-op on AWS
+dotenv.load(path.join(process.cwd(), '.env'));
 
 const config = convict({
   accessUrl: {
@@ -27,23 +24,59 @@ const config = convict({
     default: 'qDuE7x38gF9R7kt',
     env: 'CONSUMER_KEY'
   },
-  oauthHostName: {
-    doc: 'The hostname (including protocol) of the OAuth application',
+  jiraApiAccessToken: {
+    doc: 'Your JIRA API Access Token',
     format: String,
-    default: 'https://etateam.atlassian.net',
-    env: 'OAUTH_HOST_NAME'
+    default: null,
+    env: 'JIRA_API_ACCESS_TOKEN'
   },
-  oauthKeysS3Bucket: {
-    doc: 'The name of the S3 bucket that contains import Ori RSA Keys',
+  jiraApiSecretKey: {
+    doc: 'Your JIRA API Secret Key',
     format: String,
-    default: 'ori-rsa-keygen',
-    env: 'OAUTH_KEYS_S3_BUCKET'
+    default: null,
+    env: 'JIRA_API_SECRET_KEY'
   },
   jiraOauthConsumerSecretPath: {
     doc: 'The name of the file that contains the Consumer Secret for JIRA OAuth requests',
     format: String,
     default: 'keys/jira_privatekey.pcks8',
     env: 'JIRA_OAUTH_CONSUMER_SECRET_PATH'
+  },
+  jiraOauthHostName: {
+    doc: 'The hostname (including protocol) of the OAuth application',
+    format: String,
+    default: 'https://etateam.atlassian.net',
+    env: 'JIRA_OAUTH_HOST_NAME'
+  },
+  mavenlinkApiAppId: {
+    doc: 'Mavenlink API Application ID for Project Ori',
+    format: String,
+    default: null,
+    env: 'MAVENLINK_API_APP_ID'
+  },
+  mavenlinkApiSecretToken: {
+    doc: 'Mavenlink API Secret Token',
+    format: String,
+    default: null,
+    env: 'MAVENLINK_API_SECRET_TOKEN'
+  },
+  mavenlinkApiHostName: {
+    doc: 'The hostname (including protocol) of the Mavenlink application',
+    format: String,
+    default: 'https://api.mavenlink.com',
+    env: 'MAVENLINK_API_HOST_NAME'
+  },
+  mavenlinkOauthTokenPath: {
+    doc: 'The name of the file that contains the OAuth Token for Mavenlink OAuth requests',
+    format: String,
+    default: 'mavenlink/oauth_token.json',
+    env: 'MAVENLINK_OAUTH_TOKEN_PATH'
+  },
+  oauthKeysS3Bucket: {
+    doc: 'The name of the S3 bucket that contains import Ori RSA Keys',
+    format: String,
+    default: 'ori-rsa-keygen',
+    env: 'OAUTH_KEYS_S3_BUCKET'
   },
   requestUrl: {
     doc: 'The URL used to generate an OAuth request token',

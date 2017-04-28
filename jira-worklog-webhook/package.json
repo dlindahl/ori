@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "deploy": "serverless deploy",
-    "invoke": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogAdded.json",
+    "invoke": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogCreated.json",
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
     "logs": "serverless logs -f jira-worklog-webhook",
     "serverless": "serverless"
@@ -31,6 +31,7 @@
     "npm": ">= 3.0"
   },
   "dependencies": {
+    "lodash.find": "^4.6.0",
     "ori-tools": "file:../ori-tools"
   },
   "devDependencies": {

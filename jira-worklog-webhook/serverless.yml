@@ -13,6 +13,14 @@ plugins:
   - serverless-plugin-include-dependencies
 provider:
   name: aws
+  environment:
+    AWS_PROFILE: ${self:provider.profile}
+  # Needed in order to access the S3 bucket defined by ori-rsa-keygen
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "*"
   profile: ori
   runtime: nodejs6.10
   stage: prod
