@@ -17,4 +17,5 @@ resources:
       Properties:
         BucketName: ${self:custom.s3.bucket}
         AccessControl: AwsExecRead
+        # TODO: ADD ENCRYPTION SUPPORT
 service: ori-rsa-keygen
