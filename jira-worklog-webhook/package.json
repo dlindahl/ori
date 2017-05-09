@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "deploy": "serverless deploy",
-    "invoke": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogCreated.json",
+    "invoke:created": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogCreated.json",
+    "invoke:deleted": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogDeleted.json",
+    "invoke:updated": "serverless invoke local --function jira-worklog-webhook --path fixtures/worklogUpdated.json",
     "lint:js": "prettier-eslint --write \"**/*.js\" && eslint --ignore-path .gitignore --fix .",
     "logs": "serverless logs -f jira-worklog-webhook",
     "serverless": "serverless"

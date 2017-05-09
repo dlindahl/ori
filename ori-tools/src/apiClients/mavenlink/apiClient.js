@@ -51,7 +51,9 @@ module.exports = function apiClient(event, accessToken, secret) {
     };
   }
   return {
+    delete: methodRequest('DELETE'),
     get: methodRequest('GET'),
-    post: withForm(methodRequest('POST'))
+    post: withForm(methodRequest('POST')),
+    put: withForm(methodRequest('PUT'))
   };
 };
