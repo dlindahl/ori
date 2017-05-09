@@ -3,7 +3,7 @@ const find = require('lodash.find');
 let DefaultUser = null;
 let MavenlinkUsers = null;
 const MLMappingFieldId = 'customfield_11002';
-const WorklogData = /({[^}]+})\)/;
+const WorklogData = /({.+})\)$/;
 
 // Creates a Mavenlink Time Entry instance containing the time logged in JIRA
 function createTimeEntry(api, worklog) {
@@ -63,7 +63,7 @@ function getTimeEntry(api, worklogId) {
             data = JSON.parse(timeEntry.notes.match(WorklogData)[1]);
           } catch (err) {
             throw new Error(
-              `${err.message}: Could not parse worklog data from time entry note ${timeEntry.note}`
+              `${err.message}: Could not parse worklog data from time entry note "${timeEntry.notes}"`
             );
           }
           return data.worklogId === worklogId;
