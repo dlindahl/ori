@@ -53,7 +53,7 @@ function getMavenlinkStory(api) {
 }
 
 function getTimeEntry(api, worklogId) {
-  return ({ workspace, user }) => {
+  return ({ workspace }) => {
     return api.mavenlink
       .get(`/api/v1/time_entries.json?workspace_id=${workspace.id}`)
       .then(({ time_entries: timeEntries }) => {
@@ -73,7 +73,7 @@ function getTimeEntry(api, worklogId) {
 }
 
 // Finds the Mavenlink user that matches the JIRA user who logged the time entry
-function getUser(api, username) {
+function getUser(api, { author }) {
   let getUsers = null;
   if (MavenlinkUsers) {
     getUsers = Promise.resolve(MavenlinkUsers);
@@ -82,14 +82,15 @@ function getUser(api, username) {
       .get('/api/v1/users.json')
       .then(users => MavenlinkUsers = users);
   }
-  return getUsers.then(data => {
+  const fullName = author.full_name.toLowerCase();
+  return getUsers.then(({ users }) =>
     find(
-      data.users,
+      users,
       user =>
-        user.full_name.toLowerCase().includes(username) ||
-        user.email_address.toLowerCase().includes(username)
-    );
-  });
+        user.full_name.toLowerCase() == fullName ||
+        user.email_address.toLowerCase().includes(author.username)
+    )
+  );
 }
 
 function mapToMavenlinkWorkspace(api) {

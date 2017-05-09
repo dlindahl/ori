@@ -14,11 +14,11 @@ const { respond, reportError } = require('./lib/lambdaActions');
 
 function timeAdded({ callback, debugData, event, worklog }) {
   const api = createApiClients(event);
-  const { issueKey, user } = debugData;
+  const { issueKey } = debugData;
   return Promise.all([
     getDefaultUser(api),
     getIssue(api, issueKey),
-    getUser(api, user)
+    getUser(api, worklog)
   ])
     .then(mapToMavenlinkWorkspace(api))
     .then(getMavenlinkStory(api))
@@ -29,11 +29,11 @@ function timeAdded({ callback, debugData, event, worklog }) {
 
 function timeDeleted({ callback, debugData, event, worklog }) {
   const api = createApiClients(event);
-  const { issueKey, user, worklogId } = debugData;
+  const { issueKey, worklogId } = debugData;
   return Promise.all([
     getDefaultUser(api),
     getIssue(api, issueKey),
-    getUser(api, user)
+    getUser(api, worklog)
   ])
     .then(mapToMavenlinkWorkspace(api))
     .then(getTimeEntry(api, worklogId))
@@ -44,11 +44,11 @@ function timeDeleted({ callback, debugData, event, worklog }) {
 
 function timeUpdated({ callback, debugData, event, worklog }) {
   const api = createApiClients(event);
-  const { issueKey, user, worklogId } = debugData;
+  const { issueKey, worklogId } = debugData;
   return Promise.all([
     getDefaultUser(api),
     getIssue(api, issueKey),
-    getUser(api, user)
+    getUser(api, worklog)
   ])
     .then(mapToMavenlinkWorkspace(api))
     .then(getTimeEntry(api, worklogId))

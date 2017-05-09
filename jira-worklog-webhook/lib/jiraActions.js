@@ -5,16 +5,19 @@ function getIssue(api, issueKey) {
 
 // Extract the important parts from the Webhook Event
 function processEvent(event) {
-  const username = event.queryStringParameters.user_key.toLowerCase();
   const issueKey = event.queryStringParameters.issueKey;
   const projectId = event.queryStringParameters.projectId;
   const worklogId = event.queryStringParameters.worklogId;
   const body = JSON.parse(event.body);
+  const user = {
+    username: event.queryStringParameters.user_key.toLowerCase(),
+    displayName: body.worklog.author.displayName.toLowerCase()
+  };
   const timeSpentSeconds = body.worklog.timeSpentSeconds;
   const debugData = {
     processedAt: new Date(Date.now()).toISOString(),
     webhook: body.webhookEvent,
-    user: username,
+    username: user.username,
     time: timeSpentSeconds,
     projectId,
     issueKey,
