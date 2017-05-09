@@ -7,7 +7,6 @@ const serializeFormData = require('../serializeFormData');
 const DefaultHeaders = {
   contentType: 'application/json'
 };
-const DefaultMethod = 'GET';
 
 /*
  * Returns an Api Client that automatically signs each request with the
@@ -19,31 +18,40 @@ module.exports = function apiClient(event, accessToken, secret) {
     fetchSignatory(bearerToken));
 
   /*
-   * Wraps a fetch request in convenience methods that sign the request, apply
-   * default headers, appends the configured Api hostname, and processes the
-   * response.
+   * Convenience method for binding a signed fetch request to a particular HTTP
+   * method with automatic hostname appending, default headers, and response
+   * handling.
    */
-  function request(uri, headers, body, method) {
-    method = method || DefaultMethod;
-    const init = {
-      body,
-      headers: Object.assign({}, DefaultHeaders, headers),
-      method
+  function methodRequest(method) {
+    return (uri, headers, body) => {
+      const init = {
+        body,
+        headers: Object.assign({}, DefaultHeaders, headers),
+        method
+      };
+      const url = env.get('mavenlinkApiHostName') + uri;
+      return signedFetch.then(fetch => fetch(url, init)).then(responseHandler);
     };
-    const url = env.get('mavenlinkApiHostName') + uri;
-    return signedFetch.then(fetch => fetch(url, init)).then(responseHandler);
   }
 
-  // Builds a POST/PUT request that serializes form data
-  function formRequest(method) {
+  /*
+   * Builds a POST/PUT request that serializes form data and applies default
+   * headers
+   */
+  function withForm(requestFn) {
     return (uri, data, headers) => {
       const body = serializeFormData(data);
-      return request(uri, headers, body, method);
+      headers = Object.assign(
+        {
+          contentType: 'application/x-www-form-urlencoded'
+        },
+        headers
+      );
+      return requestFn(uri, headers, body);
     };
   }
-
   return {
-    get: request,
-    post: formRequest('POST')
+    get: methodRequest('GET'),
+    post: withForm(methodRequest('POST'))
   };
 };

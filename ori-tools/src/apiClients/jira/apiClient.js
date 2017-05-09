@@ -7,7 +7,6 @@ const responseHandler = require('../responseHandler');
 const DefaultHeaders = {
   contentType: 'application/json'
 };
-const DefaultMethod = 'GET';
 
 /*
  * Returns an Api Client that automatically signs each request with the
@@ -20,21 +19,22 @@ module.exports = function apiClient(event, accessToken, secret) {
     fetchSignatory(consumer, accessToken, secret));
 
   /*
-   * Wraps a fetch request in convenience methods that sign the request, apply
-   * default headers, appends the configured Api hostname, and processes the
-   * response.
+   * Convenience method for binding a signed fetch request to a particular HTTP
+   * method with automatic hostname appending and response handling.
    */
-  function request(uri, headers, method) {
-    method = method || DefaultMethod;
-    const init = {
-      headers: Object.assign({}, DefaultHeaders, headers),
-      method
+  function methodRequest(method) {
+    return (uri, headers, body) => {
+      const init = {
+        body,
+        headers: Object.assign({}, DefaultHeaders, headers),
+        method
+      };
+      const url = env.get('jiraOauthHostName') + uri;
+      return signedFetch.then(fetch => fetch(url, init)).then(responseHandler);
     };
-    const url = env.get('jiraOauthHostName') + uri;
-    return signedFetch.then(fetch => fetch(url, init)).then(responseHandler);
   }
 
   return {
-    get: request
+    get: methodRequest('GET')
   };
 };
